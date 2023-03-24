@@ -10,6 +10,18 @@
 
 截图：
 
+![登录界面.png](https://github.com/peiqingyang/cloud-study/blob/master/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png?raw=true)
+
+![登录失败.png](https://github.com/peiqingyang/cloud-study/blob/master/%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5.png?raw=true)
+
+![1.png](https://github.com/peiqingyang/cloud-study/blob/master/1.png?raw=true)
+
+![2.png](https://github.com/peiqingyang/cloud-study/blob/master/2.png?raw=true)
+
+![答题结束.png](https://github.com/peiqingyang/cloud-study/blob/master/%E7%AD%94%E9%A2%98%E7%BB%93%E6%9D%9F.png?raw=true)
+
+
+
 
 
 ## 2.部署环境需要创建数据库
