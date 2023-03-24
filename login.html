@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		.container {
+			background-color: #fff;
+			padding: 20px;
+			max-width: 500px;
+			margin: 50px auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+			text-align: center;
+		}
+		h1 {
+			color: #333;
+			margin-top: 0;
+		}
+		label {
+			display: inline-block;
+			width: 100px;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		input[type=text], input[type=password] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			resize: vertical;
+		}
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		.error-message {
+			color: red;
+			font-size: 14px;
+			margin-top: 10px;
+			text-align: left;
+		}
+        .logo {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        <img class="logo" src="hello.png" alt="Logo">
+		<h1>Welcome to our Login Page</h1>
+		<form method="post" action="login.php">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required><br>
+			<input type="submit" value="Login">
+		</form>
+		<form method="post" action="submit.php">
+			<input type="hidden" id="user" name="user" value="username">
+		</form>
+	</div>
+</body>
+</html>
