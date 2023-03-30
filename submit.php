@@ -85,13 +85,14 @@ ssh2_auth_password($connection, $_POST['username'], $_POST['password']);
     $output = stream_get_contents($stream);
     fclose($stream);
     // 检查命令输出是否包含答案
+    $dqid = $question_id + 1;
+        $sql = "UPDATE fenshu SET dqid = $dqid WHERE user = '{$_POST['user']}'";
+        mysqli_query($conn, $sql);
     if (strpos($output, $pass) !== false) {
         // 更新用户得分
         $sql = "UPDATE fenshu SET fenshu = fenshu + $fenshu WHERE user = '{$_POST['user']}'";
         mysqli_query($conn, $sql);
-        $dqid = $question_id+1;
-        $sql = "UPDATE fenshu SET dqid = $dqid WHERE user = '{$_POST['user']}'";
-        mysqli_query($conn, $sql);
+        
 
         // 查询用户得分
         $sql = "SELECT fenshu FROM fenshu WHERE user = '{$_POST['user']}'";
@@ -104,9 +105,9 @@ ssh2_auth_password($connection, $_POST['username'], $_POST['password']);
         exit;
     } else {
         // 返回空结果
-        $dqid = $question_id++;
-        $sql = "UPDATE fenshu SET fenshu = $dqid WHERE user = '{$_POST['user']}'";
-        mysqli_query($conn, $sql);
+        // $dqid = $question_id + 1;
+        // $sql = "UPDATE fenshu SET fenshu = $dqid WHERE user = '{$_POST['user']}'";
+        // mysqli_query($conn, $sql);
         header("Location: main.php");
         exit;
     }

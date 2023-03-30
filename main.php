@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<title>答题系统</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,6 +68,18 @@
 			margin-top: 20px;
 			font-size: 18px;
 		}
+		.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+  }
 	</style>
 </head>
 <body>
@@ -113,6 +128,7 @@ if ($result->num_rows > 0) {
 	// 输出最大值并将其作为 $zdid 的值
 	$row = $result->fetch_assoc();
 	$zdid = $row["max_id"];
+	// echo $zdid;
   } else {
 	// 如果查询结果为空，将 $zdid 的值设为 0
 	$zdid = 0;
@@ -175,6 +191,7 @@ if ($result) {
 mysqli_close($conn);
 ?>
 		<h1>答题系统</h1>
+		<link rel="stylesheet" href="style.css">
 		<form method="post" action="submit.php">
 			<label for="ip">IP 地址:</label>
 			<input type="text" id="ip" name="ip" required><br>
@@ -185,12 +202,10 @@ mysqli_close($conn);
             <input type="hidden" id="requests_id" name="requests_id" value="<?php echo $current_question_id; ?>">
             <input type="hidden" id="fenshu" name="fenshu" value="<?php echo $a_fenshu; ?>">
             <input type="hidden" id="user" name="user" value="<?php echo $user; ?>">
-            <!-- <input type="hidden" id="requests_id" name="requests_id" value="<?php echo $current_question_id; ?>"> -->
-			<input type="submit" value="提交">
-		</form>
-        
+           	<input type="submit" value="提交" id="submitBtn">
 
-        
+			<script src="dengdai.js"></script>
+		</form>
         <div id="score" class="score">得分：<?php echo $fenshu;?></div>
 	</div>
 </body>
