@@ -10,16 +10,35 @@
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f1f1f1;
+			/* background-color: #2184fc; */
+			/* background-color: lightblue; */
 		}
 		.container {
 			background-color: #fff;
 			padding: 20px;
 			max-width: 500px;
-			margin: 50px auto;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin: 20px auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 			border-radius: 5px;
 			text-align: center;
+		}
+		.container-a {
+			background-color: #fff;
+			padding: 5px 5px;
+			max-width: 500px;
+			margin: 20px auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+			border-radius: 5px;
+			text-align: left;
+		}
+		.container-b {
+			background-color: #fff;
+			padding: 5px 5px;
+			max-width: 500px;
+			margin: 20px auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+			border-radius: 5px;
+			text-align: left;
 		}
 		h1 {
 			color: #333;
@@ -83,9 +102,10 @@
 	</style>
 </head>
 <body>
-    
+	
 	<div class="container">
-        <img class="logo" src="hello.png" alt="Logo">
+	<h1>云计算竞赛系统</h1>
+        <!-- <img class="logo" src="hello.png" alt="Logo"> -->
         <?php
         session_start();
         if (isset($_SESSION['username'])) {
@@ -159,7 +179,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         $current_question_id = $row['id'];
         $a_fenshu = $row['fenshu'];
-        echo "<div class='question'>";
+        echo "<div class='container-a'>";
         echo "<h3>题目：" . $row['requests'] . "</h3>";
         echo "<p>分数：" . $row['fenshu'] . "</p>";
         echo "</div>";
@@ -190,9 +210,9 @@ if ($result) {
 // 关闭连接
 mysqli_close($conn);
 ?>
-		<h1>答题系统</h1>
+		
 		<link rel="stylesheet" href="style.css">
-		<form method="post" action="submit.php">
+		<form class="container" method="post" action="submit.php">
 			<label for="ip">IP 地址:</label>
 			<input type="text" id="ip" name="ip" required><br>
 			<label for="username">用户名:</label>
@@ -206,7 +226,7 @@ mysqli_close($conn);
 
 			<script src="dengdai.js"></script>
 		</form>
-        <div id="score" class="score">得分：<?php echo $fenshu;?></div>
+        <div id="score" class="container-b">得分：<?php echo $fenshu;?></div>
 	</div>
 </body>
 </html>

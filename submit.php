@@ -32,7 +32,7 @@ if (!$result_fenshu_user) {
 
 // 如果查询结果为空，则插入一条新记录
 if ($result_fenshu_user->num_rows == 0) {
-    $sql = "INSERT INTO fenshu (user, fenshu ,dqid) VALUES ('$user', 0 ,0)";
+    $sql = "INSERT INTO fenshu (user, fenshu ,dqid) VALUES ('$user', 0 ,1)";
     if ($conn->query($sql) === TRUE) {
         // echo "新记录插入成功";
     } else {
@@ -66,10 +66,12 @@ if (mysqli_num_rows($result) == 1) {
 $connection = ssh2_connect($_POST['ip'], 22);
 
 if (!$connection) {
+    header("Location: main.php");
+    exit;
   // 连接失败
-  $error = "连接服务器失败，请检查您的IP、用户名和密码";
-  header("Location: main.php?error=" . urlencode($error));
-  exit;
+//   $error = "连接服务器失败，请检查您的IP、用户名和密码";
+  
+//   exit;
 }
 
 // 认证用户名和密码
@@ -106,7 +108,7 @@ ssh2_auth_password($connection, $_POST['username'], $_POST['password']);
     } else {
         // 返回空结果
         // $dqid = $question_id + 1;
-        // $sql = "UPDATE fenshu SET fenshu = $dqid WHERE user = '{$_POST['user']}'";
+        // $sql = "UPDATE fenshu SET dqid = $dqid WHERE user = '{$_POST['user']}'";
         // mysqli_query($conn, $sql);
         header("Location: main.php");
         exit;
