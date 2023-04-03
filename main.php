@@ -21,6 +21,8 @@
 			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 			border-radius: 5px;
 			text-align: center;
+			/* display: inline; */
+			position: relative; /* 设置相对定位 */
 		}
 		.container-a {
 			background-color: #fff;
@@ -38,7 +40,19 @@
 			margin: 20px auto;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 			border-radius: 5px;
+			
 			text-align: left;
+		}
+		.container-c {
+			background-color: #fff;
+			padding: 20px;
+			max-width: 500px;
+			margin: 20px auto;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+			border-radius: 5px;
+			text-align: center;
+			/* display: inline; */
+			position: relative; /* 设置相对定位 */
 		}
 		h1 {
 			color: #333;
@@ -208,6 +222,20 @@ if ($result) {
 }
 // $user=$_POST['username'];
 // 关闭连接
+
+//分数实时显示
+$sql = "SELECT user, fenshu FROM fenshu ORDER BY fenshu DESC LIMIT 10";
+$result = $conn->query($sql);
+
+$scores = array();
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $scores[] = $row;
+    }
+}
+
+
+
 mysqli_close($conn);
 ?>
 		
@@ -227,6 +255,33 @@ mysqli_close($conn);
 			<script src="dengdai.js"></script>
 		</form>
         <div id="score" class="container-b">得分：<?php echo $fenshu;?></div>
+	
 	</div>
+	<div class="container-c">
+		<table>
+    <tr>
+        <th>排名</th>
+        <th>姓名</th>
+        <th>分数</th>
+    </tr>
+    <?php
+    // 使用循环结构输出分数排行榜
+	// 获得要排序的列
+	$column = array_column($scores, 'fenshu');
+
+	// 按照得分从高到低排序
+	array_multisort($column, SORT_DESC, $scores);
+    $rank = 1;
+    foreach ($scores as $score) {
+        echo "<tr>";
+        echo "<td>".$rank."</td>";
+        echo "<td>".$score['user']."</td>";
+        echo "<td>".$score['fenshu']."</td>";
+        echo "</tr>";
+        $rank++;
+    }
+    ?>
+</table>
+		</div>
 </body>
 </html>
