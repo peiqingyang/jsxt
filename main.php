@@ -7,14 +7,17 @@
 	<title>答题系统</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<style>
 		body {
 			font-family: Arial, sans-serif;
+			background-image: linear-gradient(to top, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 			/* background-color: #2184fc; */
 			/* background-color: lightblue; */
+			height: 100vh;
 		}
 		.container {
-			background-color: #fff;
+			background-image: linear-gradient(to top, #d4fc79 0%, #96e6a1 100%);
 			padding: 20px;
 			max-width: 500px;
 			margin: 20px auto;
@@ -25,7 +28,7 @@
 			position: relative; /* 设置相对定位 */
 		}
 		.container-a {
-			background-color: #fff;
+			background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 			padding: 5px 5px;
 			max-width: 500px;
 			margin: 20px auto;
@@ -34,7 +37,7 @@
 			text-align: left;
 		}
 		.container-b {
-			background-color: #fff;
+			background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 			padding: 5px 5px;
 			max-width: 500px;
 			margin: 20px auto;
@@ -44,13 +47,14 @@
 			text-align: left;
 		}
 		.container-c {
-			background-color: #fff;
+			background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
 			padding: 20px;
-			max-width: 500px;
-			margin: 20px auto;
+			max-width: 500px ;
+			margin: 0px auto;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 			border-radius: 5px;
 			text-align: center;
+			
 			/* display: inline; */
 			position: relative; /* 设置相对定位 */
 		}
@@ -65,13 +69,13 @@
 			text-align: left;
 		}
 		input[type=text], input[type=password] {
-			padding: 10px;
+background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271% at 0 0, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100% at 0 0, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%); background-blend-mode: normal, lighten, soft-light;			padding: 10px;
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			resize: vertical;
 		}
 		input[type=submit] {
-			background-color: #4CAF50;
+			background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 			color: #fff;
 			padding: 10px 20px;
 			border: none;
@@ -258,11 +262,11 @@ mysqli_close($conn);
 	
 	</div>
 	<div class="container-c">
-		<table>
+		<table align="center">
     <tr>
-        <th>排名</th>
-        <th>姓名</th>
-        <th>分数</th>
+        <th width="42%" >排名</th>
+        <th width="42%">姓名</th>
+        <th width="42%">分数</th>
     </tr>
     <?php
     // 使用循环结构输出分数排行榜
@@ -270,7 +274,7 @@ mysqli_close($conn);
 	$column = array_column($scores, 'fenshu');
 
 	// 按照得分从高到低排序
-	array_multisort($column, SORT_DESC, $scores);
+array_multisort($column, SORT_DESC, $scores);
     $rank = 1;
     foreach ($scores as $score) {
         echo "<tr>";
