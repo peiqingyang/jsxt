@@ -1,0 +1,161 @@
+/*矩形*/
+
+left: 30.8px;
+top: 8.31px;
+width: 416.11px;
+height: 231.38px;
+opacity: 1;
+background: rgba(216, 216, 216, 1);
+
+
+/*矩形*/
+
+left: 304.61px;
+top: 8.31px;
+width: 339.27px;
+height: 231.38px;
+opacity: 1;
+background: rgba(216, 216, 216, 1);
+
+
+/*形状结合*/
+
+left: 30.8px;
+top: 8.31px;
+width: 613.09px;
+height: 231.38px;
+opacity: 1;
+background: linear-gradient(180deg, rgba(14, 95, 255, 0.66) 0%, rgba(21, 94, 223, 0) 53.96%, rgba(14, 95, 255, 0.66) 100%);
+
+border: 5px solid rgba(151, 151, 151, 1);            
+
+
+
+/*椭圆形*/
+
+left: 468.47px;
+top: 77.72px;
+width: 12.94px;
+height: 14.72px;
+opacity: 1;
+background: rgba(61, 127, 255, 1);
+filter: blur(10px);
+
+
+/*椭圆形*/
+
+left: 546.08px;
+top: 50.38px;
+width: 12.94px;
+height: 14.72px;
+opacity: 1;
+background: rgba(61, 127, 255, 1);
+filter: blur(10px);
+
+
+/*椭圆形*/
+
+left: 114.88px;
+top: 65.1px;
+width: 12.94px;
+height: 14.72px;
+opacity: 1;
+background: rgba(61, 127, 255, 1);
+filter: blur(10px);
+
+
+/*椭圆形*/
+
+left: 145.07px;
+top: 185px;
+width: 12.94px;
+height: 14.72px;
+opacity: 1;
+background: rgba(61, 127, 255, 1);
+filter: blur(10px);
+
+
+/*椭圆形*/
+
+left: 524.52px;
+top: 172.38px;
+width: 12.94px;
+height: 14.72px;
+opacity: 1;
+background: rgba(61, 127, 255, 1);
+filter: blur(10px);
+
+
+/*编组 82*/
+
+left: 114.88px;
+top: 50.38px;
+width: 445px;
+height: 150px;
+opacity: 1;
+
+
+/*编组 65*/
+
+left: 30.8px;
+top: 8.31px;
+width: 613.09px;
+height: 231.38px;
+opacity: 1;
+
+
+/*矩形*/
+
+left: 28.02px;
+top: 96.3px;
+width: 22.8px;
+height: 152.16px;
+opacity: 1;
+transform: rotate(-22deg);
+background: linear-gradient(180deg, rgba(102, 255, 255, 1) 0%, rgba(61, 127, 255, 1) 42.49%, rgba(61, 127, 255, 0) 100%);
+
+
+/*矩形*/
+
+left: 620.92px;
+top: -0.46px;
+width: 22.8px;
+height: 152.16px;
+opacity: 1;
+transform: rotate(-22deg);
+background: linear-gradient(180deg, rgba(102, 255, 255, 1) 0%, rgba(61, 127, 255, 1) 42.49%, rgba(61, 127, 255, 0) 100%);
+
+
+/*编组 68*/
+
+left: 0.35px;
+top: 0.81px;
+width: 671.04px;
+height: 246.38px;
+opacity: 1;
+
+
+/*button*/
+
+left: 182px;
+top: 86.8px;
+width: 308px;
+height: 107px;
+opacity: 1;
+/** 文本1 */
+font-size: 73.3px;
+font-weight: 700;
+letter-spacing: 0px;
+line-height: 0px;
+color: rgba(0, 216, 255, 1);
+text-align: center;
+vertical-align: top;
+
+
+/*编组 69备份*/
+
+left: 1053px;
+top: 2459px;
+width: 672px;
+height: 248px;
+opacity: 1;
